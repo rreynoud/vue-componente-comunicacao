@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item">
-        <span>{{filmeTitulo}} | {{filmeAno}} </span>
+        <span>{{titulo}} | {{ano}} </span>
         <button class="btn btn-success float-right">Editar</button>
     </li>
 </template>
@@ -9,18 +9,18 @@
 <script>
 export default {
     props: {
-        filmeTitulo: {
+        titulo: {
             type: String,
             required: true
         },
-        filmeAno:{
+        ano:{
             type: Number,
             required: true
         }
     }
     ,
     created(){
-        console.log('Filme titulo', this.filmeTitulo)
+        console.log('Filme titulo', this.titulo)
     }
 }
 </script>
