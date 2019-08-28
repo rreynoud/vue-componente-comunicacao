@@ -11,7 +11,9 @@
         <FilmesListaIten 
          v-for="filme in filmes" 
          :key="filme.id"
-         v-bind="filme"/>
+         :filme="filme"
+         @selecionarFilme="filmeSelecionado"
+         />
 
       </div>
     </div>
@@ -42,7 +44,8 @@ export default {
           { id: 1, titulo: 'Vingadores: Guerra infinita ' , ano: 2019, diretor: "Stan Lee"},
           { id: 2, titulo: 'Homem formiga' , ano: 2019, diretor: "Stan Lee"},
           { id: 3, titulo: 'Pantera negra' , ano: 2019, diretor: "Stan Lee"}
-        ]
+        ],
+        filmeSelecionado:undefined
       }
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <li class="list-group-item">
-        <span>{{titulo}} | {{ano}} </span>
-        <button class="btn btn-success float-right">Editar</button>
+        <span>{{filme.titulo}} | {{filme.ano}} </span>
+        <button @click="selecionar" class="btn btn-success float-right">Selecionar</button>
     </li>
 </template>
 
@@ -9,18 +9,16 @@
 <script>
 export default {
     props: {
-        titulo: {
-            type: String,
-            required: true
-        },
-        ano:{
-            type: Number,
-            required: true
-        }
+       filme:{
+           type: Object,
+           required: true
+       }
     }
     ,
-    created(){
-        console.log('Filme titulo', this.titulo)
+    methods: {
+        selecionar(event){
+            this.$emit('selecionarFilme', this.filme)
+        }
     }
 }
 </script>
