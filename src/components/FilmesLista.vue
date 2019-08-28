@@ -12,7 +12,8 @@
          v-for="filme in filmes" 
          :key="filme.id"
          :filme="filme"
-         @selecionarFilme="filmeSelecionado"
+         :class="aplicarClasseAtiva(filme)"
+         @selecionarFilme="filmeSelecionado = $event"
          />
 
       </div>
@@ -21,7 +22,7 @@
     <!-- coluna 2 -->
     <div class="col-4">
 
-      <FilmesListaItenInfo/>
+      <FilmesListaItenInfo :filme="filmeSelecionado" />
 
     </div>
 
@@ -45,8 +46,15 @@ export default {
           { id: 2, titulo: 'Homem formiga' , ano: 2019, diretor: "Stan Lee"},
           { id: 3, titulo: 'Pantera negra' , ano: 2019, diretor: "Stan Lee"}
         ],
-        filmeSelecionado:undefined
+        filmeSelecionado: undefined
       }
+  },
+  methods:{
+    aplicarClasseAtiva(filmeIterado){
+      return{
+        active : this.filmeSelecionado && this.filmeSelecionado.id === filmeIterado.id
+      }
+    }
   }
 }
 </script>
