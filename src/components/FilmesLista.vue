@@ -39,9 +39,9 @@ export default {
   data(){
       return{
         filmes: [
-          { id: 1, titulo: 'Vingadores: Guerra infinita ' , ano: 2019},
-          { id: 2, titulo: 'Homem formiga' , ano: 2019},
-          { id: 3, titulo: 'Pantera negra' , ano: 2019}
+          { id: 1, titulo: 'Vingadores: Guerra infinita ' , ano: 2019, diretor: "Stan Lee"},
+          { id: 2, titulo: 'Homem formiga' , ano: 2019, diretor: "Stan Lee"},
+          { id: 3, titulo: 'Pantera negra' , ano: 2019, diretor: "Stan Lee"}
         ]
       }
   }
